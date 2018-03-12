@@ -1,4 +1,16 @@
-﻿body {
+﻿@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+        max-width: 600px;
+    }
+
+    .products {
+        grid-template-columns: 50% 50%;
+
+    }
+
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -9,12 +21,39 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
+/* Override the defa
+    ult bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
     white-space: normal;
 }
+.products{
+    display: grid;
+    grid-template-columns: 276px 276px 276px 276px;
+    grid-gap: 12px;
+}
+.product{
+    grid-column: span 1;
+    border: 1px solid #eeeeee;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+.product:first-child{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+    .product:hover {
+        background-color: #eeeeee;
+        text-decoration: none;
+        color: black;
+    }
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,

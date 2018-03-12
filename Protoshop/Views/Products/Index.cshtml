@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Protoshop.Models.Product>
+
+@{
+    ViewBag.Title = "Produkter";
+}
+
+<h2>Produkter</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+            @{ bool first = true;}
+            <div class="products">
+                @foreach (var item in Model)
+                {
+                    if (first)
+                    {
+
+                        first = false
+                    }
+                    else
+                    {
+
+                    }
+                    <a class="småkort" href="@Url.Action("Details", "Products", new { id = item.ID})" class="product">
+                        <img src="@Url.Content("~/Content/images/dökdesign1.jpg")" alt="bil"/>
+                        <h3>@item.Name</h3>
+                        <p>@item.Price</p>
+                        <p>@item.Description</p>
+                        <p><span class="btn btn-success">Köp</span></p>
+                    </a>
+                }
+                
+            </div>
+
